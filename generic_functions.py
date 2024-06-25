@@ -40,7 +40,7 @@ def mW_dbm(mW: float or np.ndarray):
     Returns:
         _description_
     '''
-    return 10.0*np.log10(mW*1e3)
+    return 10.0*np.log10(mW)
 
 
 def calc_laser(w, center_w, std=0.01):
@@ -83,7 +83,7 @@ def reflectivity_transmition(d0: np.array, di: np.array):
     reflectivity_transmition Calc reflectivity with transmition method
     Args:
         d0: Source in dbm
-        di: transmited power in dbm
+        di: transmitted power in dbm
 
     Returns:
         reflectivity vector [np.array]
@@ -96,10 +96,10 @@ def calc_reflectivity_by_transmission(source: np.array, power: np.array, wavelen
     calc_reflectivity_by_transmission compute reflectivity by transmistion method.
 
     Args:
-        wavelength: wavelength compriment in meters
+        wavelength: wavelength in meters
         source: power of source in dbm
-        power: power of transmited power
-        normalize_source: If the source needs normalization with respecti a specific range.
+        power: power of transmitted power
+        normalize_source: If the source needs normalization with respect a specific range.
             In this case, it is necessary to inform the minimum and maximum values of wavelengths. Defaults to False.
 
     Returns:
