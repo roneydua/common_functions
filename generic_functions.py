@@ -14,7 +14,7 @@ import pandas as pd
 # import sympy as sp
 
 
-def dbm_mW(dbm:float or np.ndarray, mW=True):
+def dbm_mW(dbm:float | np.ndarray, mW=True):
     '''
     dbm2mW transform a dbm to mW or Watt
     Args:
@@ -28,9 +28,9 @@ def dbm_mW(dbm:float or np.ndarray, mW=True):
         return 10.0**(0.1*dbm)
     else:
         return 1e-3 * (10.0**(0.1*dbm))
-    
 
-def mW_dbm(mW: float or np.ndarray):
+
+def mW_dbm(mW: float | np.ndarray):
     '''
     dbm2mW transform a dbm to mW or Watt
     Args:
@@ -91,7 +91,7 @@ def reflectivity_transmition(d0: np.array, di: np.array):
     return 1.0 - (10**(0.1 * (di-d0)))
 
 
-def calc_reflectivity_by_transmission(source: np.array, power: np.array, wavelength: None or np.array, normalize_source =False, **kwargs):
+def calc_reflectivity_by_transmission(source: np.array, power: np.array, wavelength: None | np.array, normalize_source =False, **kwargs):
     '''
     calc_reflectivity_by_transmission compute reflectivity by transmistion method.
 
@@ -123,3 +123,31 @@ def calc_bias(self, min_w:float, max_w:float, wavelength:np.ndarray,source:np.nd
     bias_source = np.cumsum(source[index_min:index_max] + power[index_min:index_max])*0.5
     return bias_source
 
+def print_numpy_as_matrix(m:np.ndarray, column=False):
+    shape = m.shape
+    if len(shape) == 1:
+        # is a vector
+        if column:
+            ncols = 1
+            nrows= shape[0]
+            for row in range(m.size):
+                print(r"\num{", m[row], "}", end="", sep="")
+                if row < m.size-1:
+                    print(r" \\")
+        else:
+            for row in range(m.size):
+                print(r"\num{", m[row], "}", end="", sep="")
+                if row < m.size-1:
+                    print(r" & ",end='')
+    else:
+        nrows = shape[0]
+        ncols = shape[1]
+        for row in  range(nrows):
+            for col in range(ncols):
+                print(r'\num{',m[row,col],'}',end='',sep='')
+                if col<ncols-1:
+                    print(" & ",end='')
+                elif row<nrows:
+                    print(r" \\")
+        # print(r"\\left[\\begin{array}{"+ncols*'c'+'}')
+        # print(r"\\end{array}\\right]")
