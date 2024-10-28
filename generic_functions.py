@@ -43,7 +43,7 @@ def mW_dbm(mW: float | np.ndarray):
     return 10.0*np.log10(mW)
 
 
-def calc_laser(w, center_w, std=0.01):
+def calc_laser(w, center_w, std=0.01, normalized=False):
     '''
     calc_laser make a laser with Gaussian profile.
     Args:
@@ -53,8 +53,13 @@ def calc_laser(w, center_w, std=0.01):
     Returns:
         A vector of laser
     '''
-    return np.exp(-(w - center_w)**2 /
-                  (2.0 * std**2)) / (std * np.sqrt(2.0 * np.pi))
+    gaussian_laser = np.exp(-((w - center_w) ** 2) / (2.0 * std**2)) / (
+        std * np.sqrt(2.0 * np.pi)
+    )
+    if normalized:
+        return gaussian_laser/(np.sqrt(2*np.pi*std**2))
+    else:
+        return gaussian_laser
 
 
 def find_index_of_x_span(min:float, max:float, x:np.array):
@@ -78,7 +83,7 @@ def find_index_of_x_span(min:float, max:float, x:np.array):
     return index_min, index_max
 
 
-def reflectivity_transmition(d0: np.array, di: np.array):
+def reflectivity_transmition(d0: np.ndarray, di: np.ndarray):
     '''
     reflectivity_transmition Calc reflectivity with transmition method
     Args:
@@ -91,7 +96,7 @@ def reflectivity_transmition(d0: np.array, di: np.array):
     return 1.0 - (10**(0.1 * (di-d0)))
 
 
-def calc_reflectivity_by_transmission(source: np.array, power: np.array, wavelength: None | np.array, normalize_source =False, **kwargs):
+def calc_reflectivity_by_transmission(source: np.ndarray, power: np.ndarray, wavelength: "None | np.ndarray", normalize_source =False, **kwargs):
     '''
     calc_reflectivity_by_transmission compute reflectivity by transmistion method.
 
