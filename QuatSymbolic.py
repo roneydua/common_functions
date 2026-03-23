@@ -52,7 +52,7 @@ class QuaternionSymbolic(object):
         return q_x
     
 
-    def quatRot(self, normalized=0):
+    def quat_rot(self, normalized=0):
         """
         @brief      Function that covert a quaternion on matrix rotation
 
@@ -95,7 +95,7 @@ class QuaternionSymbolic(object):
     # def RotVetQuat(p_A_B, a_B):
 
     #     # =============================================================================
-    #     #     para um quaternion A->B  tal que leve transorme uma coordenada do referencial A
+    #     #     para um quaternion A->B  tal que leve transforme uma coordenada do referencial A
     #     #     para o referencial B temos
     #     #     ap : queternion vetor 4x1 de A para B
     #     #     av : vetor a ser rotacionado no sistema A
