@@ -288,7 +288,7 @@ text.usetex: True  # use latex for all text handling. The following fonts
 # text.latex.preamble: 	\usepackage{siunitx}\usepackage[smallscripts]{moresize}\usepackage{amsmath}\DeclareSIUnit\rpm{rpm}\usepackage{fourier}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{gensymb}\DeclareUnicodeCharacter{0008}{\ensuremath{{}^2}}
 # text.latex.preamble: \usepackage{siunitx}\usepackage[smallscripts]{moresize}\usepackage{almendra}\renewcommand{\familydefault}{\rmdefault}\usepackage{amsmath}\DeclareSIUnit\rpm{rpm}\DeclareSIUnit{\decibelm}{dBm}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{gensymb}\DeclareUnicodeCharacter{0008}{\ensuremath{{}^2}}
 
-text.latex.preamble: \usepackage[sc]{mathpazo}\renewcommand{\familydefault}{\rmdefault}\usepackage{siunitx}\usepackage[smallscripts]{moresize}\usepackage{amsmath}\DeclareSIUnit\rpm{rpm}\DeclareSIUnit{\dbm}{dBm}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{gensymb}\DeclareUnicodeCharacter{0008}{\ensuremath{{}^2}}
+text.latex.preamble: \usepackage[sc]{mathpazo}\renewcommand{\familydefault}{\rmdefault}\usepackage{siunitx}\DeclareSIUnit{\strain}{\ensuremath{\text{$\varepsilon$}}}\usepackage[smallscripts]{moresize}\usepackage{amsmath}\DeclareSIUnit\rpm{rpm}\DeclareSIUnit{\dbm}{dBm}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{gensymb}\DeclareUnicodeCharacter{0008}{\ensuremath{{}^2}}
 
 #"\begin{document}"
 
