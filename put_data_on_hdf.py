@@ -40,7 +40,7 @@ f = h5py.File("phd_data.hdf5", "a")
 # fff = ff.require_group("test_of_pm_components")
 
 
-# fff["sld_isolator_circulator/v_trans"] = pd.read_csv("./../accel_v1/20240111/circulator_analisys",sep='\t').iloc[:,1].to_numpy()
+# fff["sld_isolator_circulator/v_trans"] = pd.read_csv("./../accel_v1/20240111/circulator_analysis",sep='\t').iloc[:,1].to_numpy()
 # fff["sld_isolator_circulator"].attrs["info"]= "Saída do transimpedância com o SLD ligado ao isolador e ao acoplador 99/1 e ao circulador."
 
 
