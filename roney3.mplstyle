@@ -420,6 +420,7 @@ axes.spines.right: False#True
 # axes.prop_cycle: cycler('linestyle', ['-', '--', ':', '-.']) * cycler('color', ['3C1053','E10098','F4AF23','4AC9E3','D7A9E3','890C58'])
 # color from https://www.color-hex.com/color-palette/61235
 axes.prop_cycle: cycler('linestyle', ['-', '--', ':', '-.']) * cycler('color', ['711c91','ea00d9','0abdc6','133e7c','091833','ff2a2a','00ff66'])
+# '#711c91','#ea00d9','#0abdc6','#133e7c','#091833','#ff2a2a','#00ff66'
 # color cycle for plot lines as list of string colorspecs:
 # single letter, long name, or web-style hex
 # As opposed to all other paramters in this file, the color
